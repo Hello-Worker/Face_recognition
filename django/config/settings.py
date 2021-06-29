@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'photon',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# 인증(로그인) 관련 설정
+LOGIN_REDIRECT_URL = 'photon/index'
+LOGIN_URL = '/account/login'
+LOGOUT_REDIRECT_URL = '/'
