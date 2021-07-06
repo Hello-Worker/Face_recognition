@@ -3,8 +3,7 @@
 
 <img src="https://user-images.githubusercontent.com/75672831/124614729-8364da80-deaf-11eb-80a8-c5bac28bc62b.JPG" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="가상화면"></img>
 
-## 2.	프로젝트 소개
-<br/>  
+## 2.	프로젝트 소개<br/>  
 <br/>
 <img src="https://user-images.githubusercontent.com/75672831/124615900-9c21c000-deb0-11eb-9d23-25e112be380a.JPG" width="50%" height="70%" alt="로그인구현"></img>
 
@@ -14,7 +13,7 @@
 4) 관리자 외 관리자 서비스 사용 불가
 
 ## 3.	개발환경
-CPU i7-1165G7
+CPU i7-1165G7<br/>
 RAM 16GB
 
 -Face_recognition<br/>
