@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from config.settings import STATIC_ROOT
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from . import settings
 
 
 urlpatterns = [
@@ -23,4 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('photon/', include('photon.urls')),
     path('account/', include('account.urls')),
+    
 ]
+
+#urlpatterns += STATIC_ROOT(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

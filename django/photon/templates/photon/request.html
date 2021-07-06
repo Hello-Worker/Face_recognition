@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 사용자의 카메라와 마이크를 웹앱에서 접근할 수 있게 해주는 새로운 API, navigator, getUserMida() -->
+    <!-- https://www.html5rocks.com/ko/tutorials/getusermedia/intro/ -->
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js'></script>
+ 
+
+    <!-- 웹캠 사용, 캡쳐 비디오 기능 위한 함수 구현    -->
+    <script>
+        // navigator.getUserMedia()를 사용하면, 플러그인 없이 웹캠과 마이크 입력 사용 가능. 웹캠 사용을 위한 함수 구현
+        function webcam() {
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({  
+                    //웹캠에 접근하기 위한 권한 요청. getUserMedia 인자 - 접근하려하는 미디어별 상세 요구사항 나타내는 객체 
+                     video: true, 
+                     audio: false
+                }).then(function(stream) {
+                    // getElementbyID - 태그에 있는 ID 속성을 사용해 해당 태그에 접근하여 하고 싶은 작업 할 때 사용하는 함수
+                    var video = document.getElementById('video');
+                    video.srcObject = stream;
+                    video.play();
+                }).catch(function(err) {
+                    alert(err)
+                });
+            }
+        }
+
+        function captureVideo() {
+            let canvas = document.getElementById('canvas')
+            let video = document.getElementById('video')
+            console.log(video.videoWidth, canvas.width)
+            // 원래 video 크기대로 나오도록
+            // canvas.width = video.videoWidth 
+            // canvas.height = video.videoHeight
+            let context = canvas.getContext('2d')
+
+            // https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Using_images#%EC%9D%B4%EB%AF%B8%EC%A7%80_%EA%B7%B8%EB%A6%AC%EA%B8%B0
+            // <canvas> API의 .drawImage(video, 0, 0) 함수는 <video> 프레임들을 <canvas>로 쉽게 그려줌
+            // getUserMieda()를 통해 받은 비디오 입력값을 쉽게 사진으로 변경 가능
+            context.drawImage(video, 0, 0, 608, 608) //320,240) //(image, x, y, width, height)
+            
+
+            // canvas의 image 가져오기(image를 문자열로 가져옴)
+            const imageString = canvas.toDataURL();
+            
+
+            // 서버에서 이미지 저장 경로를 정의하고 Base64 이미지 문자열을 이미지 파일로 변환 한 다음 파일 시스템에 저장
+            $.ajax({
+                url:"{%url 'photon:save'%}", //서버에 저장
+                data:{"image":imageString.substring(21)},  //이미지 문자열로 받아 image 딕셔너리에 넣음. toDataURL()을 하면 앞에 mime type등 정보가 붙는다. 이것을 제거하고 보냄. (https://sangminem.tistory.com/30  중간쯤 소스 확인)
+                dataType:'json', //데이터 타입 json
+                method:'POST',
+                success: function(res) { // 리턴값 받음
+                    // alert(JSON.stringify(res))
+                    // div_layer = document.getElementById('result_layer')
+                    
+                    label_list = res['label_list']
+                    prob_list = res['prob_list']
+                        
+                        
+                   // if prob_list[0] // 확률 떼와서 if로 판단
+                    txt = label_list+" - "+prob_list +"% : 로그인 성공"                 
+                    alert(txt)
+
+                // admin.auth/user 창으로 이동    
+                location.href="admin/auth/user/"
+                },
+
+                //error 발생시, "로그인 실패" 팝업창 작동
+                error: function(xhr, status, msg) {
+                    alert("로그인 실패") //+status+msg
+                }
+            });
+        }            
+
+    </script>
+</head>
+<body>
+    <script>
+        // 웹캠, 비디오 바로 실행
+        window.onload=function(){
+            webcam();
+            video;
+        }
+        // space바 키(keyCode ==32) 눌렀을 때 함수(captureVideo) 실행
+        window.onkeydown=function(){
+            if(window.event.keyCode == 32){
+                  captureVideo();
+            }
+        }
+    
+    // 비디오 창 크기 및 이미지 크기 지정 608 x 608(넓이 x 높이)
+    </script>
+    <video id="video" width="608" height="608" autoplay controls></video> <!--webcam-->
+    <canvas id="canvas" width="608" height="608"></canvas><!--캡쳐 이미지 나오게-->
+    <div id='result_div'></div>
+    <br>
+
+    <!--<button type='button' onclick='webcam()'>웹캠 start</button> -->
+    <button type='button' onclick='captureVideo()' >CAPTURE</button>
+</body>
+</html>

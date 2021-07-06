@@ -1,55 +1,73 @@
+
 from django.shortcuts import render
-from django.http import HttpResponse
-import cv2, sys, os, time, uuid
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt #csrf 적용 안받도록 처리.
+from tensorflow.python.ops.gen_control_flow_ops import abort_eager_fallback 
+from .apps import PhotonConfig
+from PIL import Image
+from io import BytesIO
+from django.contrib.auth import views, login, get_user_model
+from django.contrib.auth.models import User
+from django.db import models
+import cv2, base64
+import numpy as np
+import tensorflow as tf
 
 
-# Create your views here.
-def index(request):
+@csrf_exempt
+
+def index(request): # 메인 홈
     return render(request, "photon/index.html")
 
-def webcam(request):
-    IMAGE_DIR = 'images'
-    if not os.path.isdir(IMAGE_DIR):
-        os.mkdir(IMAGE_DIR)
+@csrf_exempt
+def save_image(request): #이미지 처리
+    global prob_list, label_list 
 
-    labels = ['admin']
-    n_images = 10 # 카테고리별로 몇장 씩 만들자
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        print('웹캠 연결 실패')
-        sys.exit(1) # 종료
+    if request.method == 'POST':
+        # 이미지 오픈
+        img_string = request.POST['image'] # 이미지 base64 데이터 받음
+        img_str = base64.b64decode(img_string) # base64 데이터 디코딩
+        img = Image.open(BytesIO(img_str)).convert('RGB') # 컬러이미지로 반환
         
-    # 웹캠 이미지 사이즈 설정
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-    break_all = False #중복 반복문의 전체를 빠져나오기 위한 bool 변수
-
-    # Label 별로 반복해서 캡쳐
-    for label in labels:
-        print(f"{label} 라벨 캡쳐")
-        time.sleep(2) # 2초 대기.(준비시간)
+        # 이미지 변환
+        img_resize = img.resize((608,608))  #input shape으로 resize
+        arr = np.array(img_resize) # 넘파이 배열로
+        arr = arr[np.newaxis, ...]
+        arr = arr/255. # 정규화
+        IOU_THRESH = 0.5 # 겹칠 때 0.5이상이면 제거
+        CONFIDENCE_SCORE_THRESH = 0.3 #0.3보다 낮은 애는 없앤다
         
-        # 이미지 n_images 개수만큼 캡쳐
-        # 한번 반복할때 마다 한장씩 캡쳐.
-        for img_num in range(n_images):
-            ret, frame= cap.read() # 캡쳐: 성공 여부, 캡쳐 이미지(ndarray) 반환
-            
-            frame = cv2.flip(frame, 1)
-            filename = "{}-{}.jpg".format(label, str(uuid.uuid1()))
-            file_path = os.path.join(IMAGE_DIR, filename)
-            #화면에 출력
-            cv2.imshow('frame', frame)
-            #캡처 이미지를 파일로 저장
-            cv2.imwrite(file_path, frame)
-            print(f"{img_num}번쨰, ", end=" ")
-            if cv2.waitKey(1000) == 27: # 27:esc를 누르면 강제 종료. waitkey(2000=>2초) 2초 후에 다음 동작을 캡쳐
-                print('강제종료')
-                break_all = True
-                break
-            if break_all: # 반복문 전체를 빠져나오도록 설정.
-                break
-                
-    # 종료: 카메라, 출력창을 종료
-    cap.release()
-    cv2.destroyAllWindows()
+        # 이미지 예측
+        input_tensor = tf.convert_to_tensor(arr) # 텐서타입으로 변환
+        pred = PhotonConfig.model.predict(input_tensor) 
+        boxes = pred[:,:,0:4] # 박스 좌표
+        pred_conf = pred[:,:,4:] # 클래스 확률
+    
+        boxes, scores, classes, valid_detections = tf.image.combined_non_max_suppression( # 박스 겹치기
+            boxes = tf.reshape(boxes, (tf.shape(boxes)[0],-1,1,4)), # boexes[0]: 1을 그대로 주고, -1 : 남는 것.->(1,16,1,4)  4차원으로
+            scores = tf.reshape(pred_conf, (tf.shape(pred_conf)[0], -1,tf.shape(pred_conf)[-1])),
+            max_output_size_per_class = 50, # 클래스 당 비
+            max_total_size = 50, # 모든 클래스에서 유지되는 최대 박스 수 
+            iou_threshold = IOU_THRESH, 
+            score_threshold = CONFIDENCE_SCORE_THRESH) 
+        
+        scores = scores.numpy() 
+        classes = classes.numpy()
+        scores_max = np.max(scores, axis=-1)*100 # 확률 최대 값
+        label_list = int(classes[0][0]) 
+
+        label_map = ['A','B','C','D'] # 클래스 이름 설정
+        label_list = label_map[label_list]
+        prob_list= int(scores_max)
+        user_id = User.objects.get(username=label_list, is_superuser=True) #동일한 이름의 username조회
+        if int(prob_list) > 80: # 80 이상 시 로그인
+            login(request, user_id)
+            dic = {
+                'label_list':label_list,
+                "prob_list":prob_list
+            }
+        
+        return JsonResponse(dic, status=200) # 바이너리로 변환하려 보냄 request로
+
+    

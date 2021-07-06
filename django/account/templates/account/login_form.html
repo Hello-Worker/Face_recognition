@@ -15,6 +15,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}"></noscript>
+        <style>
+            
+        </style>
 	</head>
 	<body class="is-preload">
 
@@ -22,15 +25,14 @@
 			<section id="header">
 				<div class="inner">
 					<span class="icon solid major fa-cloud"></span>
-			
                         <form method = 'post'>
                             {% csrf_token %}
                             {{form.as_p}}<br>
                             <button type = 'submit' class='btn btn-primary'> LOGIN </button>
                         </form>
-                        <button type = 'submit' class='btn btn-primary' onclick="location.href='/photon/webcam' "> FACE LOGIN</button></a>
+                        <button type = 'submit' class='btn btn-primary' onClick="location.href='/photon/request' "> FACE LOGIN</button></a>
+                        
                        
-					</ul>
 				</div>
 			</section>
         
