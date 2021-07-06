@@ -46,19 +46,26 @@ Opencv 3.2<br/>
 
 ![타임라인](https://user-images.githubusercontent.com/75672831/124616639-38e45d80-deb1-11eb-9d41-9ccebbc2c481.JPG)
 
-## 5. 모델 성능 평가
+## 5. 모델 성능 평가 및 선정 
 
-### 1) Face_recognition
-- 정확도가 71% 정도로 높지 않았음
-- 팀원 4명의 얼굴 이미지를 디렉토리에 넣어 이미지 데이터셋을 만드는 형식으로 추가 학습이 불가
+* 모델 선택 기준 *
+A. Custom data 학습 가능한가?
+B. Object detection 가능한가?
+C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?
 
-### 2) Inception_resnet_v1
-- Val_accuracy, Accuracy 모두 1 도출. 정확도 자체는 높은 편.
-- A의 사진들은 다른 사진들에 비해 저화질이었는데, A의 정확도가 낮은 편이었던 것을 미루어 보아 학습시킨 사진의 선명도에 따라 정확도의 퍼센티지가 높고 낮아질 수도 있을 것이다 라는 추측을 할 수 있었음
-- 단순 분류모델이기 때문에 헤어스타일, 배경 등에 관계없이 얼굴 인식 시스템을 구현하기 위해 object detection이 가능한 모델로 변경.
+1) Face_recognition(B만족 / A,C 불만족)
+- 정확도: 71% => 타모델보다 낮은 정확도.
+- 추가학습, 모델 개선 불가
 
-### 3) Yolov4
-- Object Detection이 가능한 모델 중 SOTA 모델 선정</br>  </br>  
+2) Inception_resnet_v1(A,C만족 / B 불만족)
+- Val_accuracy, Accuracy : 1  => 높은 정확도.
+- 학습데이터 Aset의 정확도 낮음 => A의 dataset이 저화질인 것이 원인으로 추측됨.
+- 단순 분류모델. Object dection불가능.
+(헤어스타일, 배경 등에 관계없이 얼굴 인식 시스템을 구현하기 위해 object detection이 가능한 모델 필요)
+.
+3) Yolov4(A,B,C만족)
+- Object Detection이 가능한 모델 중 SOTA 모델 선정
+
 
 
 ## 6. Yolov4 모델 
