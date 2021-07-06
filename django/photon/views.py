@@ -61,7 +61,7 @@ def save_image(request): #이미지 처리
         label_list = label_map[label_list]
         prob_list= int(scores_max)
         user_id = User.objects.get(username=label_list, is_superuser=True) #동일한 이름의 username조회
-        if int(prob_list) > 80: # 80 이상 시 로그인
+        if int(prob_list) > 90: # 90 이상 시 로그인
             login(request, user_id)
             dic = {
                 'label_list':label_list,

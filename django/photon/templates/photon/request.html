@@ -54,7 +54,8 @@
             // 서버에서 이미지 저장 경로를 정의하고 Base64 이미지 문자열을 이미지 파일로 변환 한 다음 파일 시스템에 저장
             $.ajax({
                 url:"{%url 'photon:save'%}", //서버에 저장
-                data:{"image":imageString.substring(21)},  //이미지 문자열로 받아 image 딕셔너리에 넣음. toDataURL()을 하면 앞에 mime type등 정보가 붙는다. 이것을 제거하고 보냄. (https://sangminem.tistory.com/30  중간쯤 소스 확인)
+                data:{"image":imageString.substring(21)},  //이미지 문자열로 받아 image 딕셔너리에 넣음. 
+                //toDataURL()을 하면 앞에 mime type등 정보가 붙는다. 이것을 제거하고 보냄. (https://sangminem.tistory.com/30  중간쯤 소스 확인
                 dataType:'json', //데이터 타입 json
                 method:'POST',
                 success: function(res) { // 리턴값 받음
