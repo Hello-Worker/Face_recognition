@@ -48,7 +48,7 @@ Opencv 3.2<br/>
 
 ## 5. 모델 성능 평가 및 선정 
 
-모델 선택 기준
+모델 선택 기준<br/>
 A. Custom data 학습 가능한가?<br/>
 B. Object detection 가능한가?<br/>
 C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
