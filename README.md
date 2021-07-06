@@ -113,9 +113,11 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 ![46223](https://user-images.githubusercontent.com/75672831/124625964-3ab21f00-deb9-11eb-90b1-7a3f89583fad.JPG)
 
 #### 3) 메인화면 구축(템플릿 https://html5up.net/photon)
+
 - index.html: 메인 화면
-- login_form: 로그인 화면
 
 ![메인](https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG)
+
+- login_form: 로그인 화면
 ![로그인](https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG)
 
