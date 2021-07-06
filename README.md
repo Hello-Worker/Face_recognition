@@ -58,7 +58,7 @@ Opencv 3.2<br/>
 - 단순 분류모델이기 때문에 헤어스타일, 배경 등에 관계없이 얼굴 인식 시스템을 구현하기 위해 object detection이 가능한 모델로 변경.
 
 ### 3) Yolov4
-- Object Detection이 가능한 모델 중 SOTA 모델 선정
+- Object Detection이 가능한 모델 중 SOTA 모델 선정</br>  </br>  
 
 
 ## 6. Yolov4 모델 
