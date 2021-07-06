@@ -57,7 +57,7 @@ def save_image(request): #이미지 처리
         scores_max = np.max(scores, axis=-1)*100 # 확률 최대 값
         label_list = int(classes[0][0]) 
 
-        label_map = ['A','B','C','D'] # 클래스 이름 설정
+        label_map = ['Song','Kang','Kwon','Chae'] # 클래스 이름 설정
         label_list = label_map[label_list]
         prob_list= int(scores_max)
         user_id = User.objects.get(username=label_list, is_superuser=True) #동일한 이름의 username조회
