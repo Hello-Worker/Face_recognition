@@ -66,22 +66,22 @@ Opencv 3.2<br/>
 ![학습과정](https://user-images.githubusercontent.com/75672831/124618573-dd1ad400-deb2-11eb-99a7-f43a553d7ce1.JPG)
 
 
-1) 팀원 4명의 사진 1000장 수집 및 전처리
+### 1) 팀원 4명의 사진 1000장 수집 및 전처리
 
-2) Custom Data을 이용해 Transfer Learning 진행
+### 2) Custom Data을 이용해 Transfer Learning 진행
 - Google Colab의 GPU 사용
 - Yolov4에서 제공하는 Pretrained Weights에 본 조가 준비한 이미지 데이터로 transfer learning 진행(yolov4.conv.137 : 특징 추출에 특화된 가중치를 넣어 학습)
 
-3) 학습
+### 3) 학습
 - 첫 번째 학습에서는 각자가 직접 찍은 조원 4명의 사진 800장을 약 12시간동안 추가 학습. A와 D의 경우 마스크를 썼을 때와 쓰지 않았을 때 모두 잘 구별해냈으나 B가 마스크를 쓰지 않았을 때와 C가 마스크를 썼을 때의 사진에 대한 정확도가 낮았음
 - 두 번째 학습에서는 정확도가 낮은 두 명의 팀원 데이터를 추가 확보 후 재학습: 추가 학습
 - 최종적으로 4명의 얼굴을 정확히 인식(정확도 결과 나오면 보완)
 
-4) Yolov4를 Tensorflow 모델로 변환
+### 4) Yolov4를 Tensorflow 모델로 변환
 - 추후 Django와의 연동을 용이하게 하기 위해 darknet 모델을 Tensorflow 모델로 변환 후 export
 - Tensorflow-yolov4-tflite를 통해 모델을 저장
 
-5) Django로 웹페이지 내 안면인식 로그인 서비스 구현
+### 5) Django로 웹페이지 내 안면인식 로그인 서비스 구현
 - 메인화면 구축
 - 사용자 계정 db 생성
 - 로그인 화면 및 폼 활성화
