@@ -16,7 +16,7 @@
 CPU i7-1165G7<br/>
 RAM 16GB
 
--Face_recognition<br/>
+#### -Face_recognition<br/>
 cmake 3.2<br/>
 dlib 19.22<br/>
 face_recognition 1.3<br/>
@@ -25,7 +25,7 @@ Opencv 4.5<br/>
 Python 3.8<br/>
 Tensorflow 2.5<br/>
 <br/>
--Inception-resnet v1<br/>
+#### -Inception-resnet v1<br/>
 Google Colab<br/>
 Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic<br/>
 Inception-resnet v1<br/>
@@ -35,7 +35,7 @@ Numpy 1.19<br/>
 PILLOW 7.1<br/>
 Python 3.7<br/>
 <br/>
--Yolov4<br/>
+#### -Yolov4<br/>
 Google Colab<br/>
 Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic<br/>
 Python 3.7<br/>
