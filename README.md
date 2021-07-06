@@ -48,7 +48,9 @@ Opencv 3.2<br/>
 
 ## 5. 모델 성능 평가 및 선정 
 
-모델 선택 기준<br/>
+![KakaoTalk_20210706_235841147](https://user-images.githubusercontent.com/75672831/124629268-3d624380-debc-11eb-80b6-e353cf81a535.png)
+
+####<모델 선택 기준<br/>>
 A. Custom data 학습 가능한가?<br/>
 B. Object detection 가능한가?<br/>
 C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
@@ -69,6 +71,8 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 
 
 ## 6. Yolov4 모델 
+
+<img src="https://user-images.githubusercontent.com/75672831/124629146-23286580-debc-11eb-937d-199d9fadc4a6.JPG" width="50%" height="50%" alt="yolov4"></img>
 
 ![학습과정](https://user-images.githubusercontent.com/75672831/124618573-dd1ad400-deb2-11eb-99a7-f43a553d7ce1.JPG)
 
@@ -119,18 +123,27 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 ![메인](https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG)
 
 - login_form: 로그인 화면
-- 
+
 ![로그인](https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG)
 
-#### 4) 웹캠 연동하여 실시간 이미지 수집
 
+## 8. 웹페이지 모델 연동
+
+#### 1) 웹캠 연동하여 실시간 이미지 수집
+
+- request.html: 웹캠 연동, 실시간 이미지 수집, 예측 결과 화면 구현
 - Video, Canvas 활용
 
-#### 5) ajax로 수집된 이미지 서버로 전송
+#### 2) ajax로 수집된 이미지 서버로 전송
+#### 3) 모델연동 및 예측 결과 웹으로 전송
+#### 4) 웹에서 안면인식 로그인 서비스 구현<br/>
 
-#### 6) 모델연동 및 예측 결과 웹으로 전송
+![35235](https://user-images.githubusercontent.com/75672831/124630377-55869280-debd-11eb-90ee-8bad1e4da9a3.JPG)
 
-#### 7) 웹에서 안면인식 로그인 서비스 구현
+
+
+
+
 
 
 ## 8. 한계 및 개선사항
@@ -147,6 +160,7 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 
 
 ## 10. 참고 문헌
+
 #### - 템플릿
 https://html5up.net/photon
 
