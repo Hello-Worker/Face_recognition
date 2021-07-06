@@ -5,6 +5,7 @@
 
 ## 2.	프로젝트 소개
 
+
 <img src="https://user-images.githubusercontent.com/75672831/124615900-9c21c000-deb0-11eb-9d23-25e112be380a.JPG" width="50%" height="70%" alt="로그인구현"></img>
 
 1) 실시간 이미지 캡처를 통한 안면 인식(정면 응시 요망)
