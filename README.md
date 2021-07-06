@@ -119,7 +119,7 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 ![메인](https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG)
 
 - login_form: 로그인 화면
-- 
+
 ![로그인](https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG)
 
 #### 4) 웹캠 연동하여 실시간 이미지 수집
@@ -147,6 +147,7 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 
 
 ## 10. 참고 문헌
+
 #### - 템플릿
 https://html5up.net/photon
 
