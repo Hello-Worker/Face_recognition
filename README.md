@@ -61,5 +61,10 @@ Opencv 3.2<br/>
 - Object Detection이 가능한 모델 중 SOTA 모델 선정
 
 
+## 6. Yolov4 모델 
+
+![학습과정](https://user-images.githubusercontent.com/75672831/124618573-dd1ad400-deb2-11eb-99a7-f43a553d7ce1.JPG)
+
+
 
 
