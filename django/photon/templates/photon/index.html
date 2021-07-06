@@ -4,22 +4,26 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+
 <html>
 	{% load static%}
+<!-- HEAD 부분: 브라우저의 제목 표시줄이나 페이지 탭에 보여지는 문서의 제목 -->
 	<head>
-		<title>Face project</title>
-		<meta charset="utf-8" />
+		<title>FACE ON project</title>
+		<meta charset="utf-8" />  
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}"></noscript>
 	</head>
 	<body class="is-preload">
 
+<!-- HEADER 부분: 메인 페이지 헤더 부분-->
 		<!-- Header -->
 			<section id="header">
 				<div class="inner">
 					<span class="icon solid major fa-cloud"></span>
-					<h1>Hi, This is <strong>our project</strong><br>
+					<h1>Hi, This is our <strong>FACE ON project</strong><br>
 					Please log in!</h1>
 					<p>Welcome to Face Recognition Log-in System!<br />
 					Please click 'LOGIN' button for your log-in.<br /></p>
@@ -29,19 +33,19 @@
 				</div>
 			</section>
 
-		<!-- One -->
+<!-- FACE ON 프로젝트 기능 소개 -->
 			<section id="one" class="main style1">
 				<div class="container">
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium">
 							<header class="major">
-								<h2>First project:<br />
+								<h2>FACE ON project:<br />
 									Face Recognition Log-in System</h2>
 							</header>
-							<p>사용자의 마스크 착용 유무 모두 인식 가능한 로그인 서비스 기능<br><br>
-							1. 사용자의 안면인식 로그인 기능 구현<br>
+							<p>마스크 착용 유무 모두 인식 가능한 로그인 서비스 기능<br><br>
+							1. 실시간 화면 캡쳐를 통한 얼굴 인식<br>
 							2. 사용자의 마스크 착용 유무 모두 인식 가능<br>
-							3. 사용자 간 커뮤니티 페이지 및 관리자 서비스 구성<br>
+							3. 관리자의 안면 인식 통한 자동 로그인 서비스<br>
 							4. 관리자 외 관리자 서비스 사용 불가</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
@@ -51,61 +55,98 @@
 				</div>
 			</section>
 
-		<!-- Two -->
+<!-- FACE ON 프로젝트 활용 분야 -->
 			<section id="two" class="main style2">
 				<div class="container">
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium">
 							<ul class="major-icons">
-								<li><span class="icon solid style1 major fa-code"></span></li>
-								<li><span class="icon solid style2 major fa-bolt"></span></li>
+								<!-- <li><span class="icon solid style1 major fa-code"></span></li> -->
+								<!-- <li><span class="icon solid style2 major fa-bolt"></span></li>
 								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
 								<li><span class="icon solid style4 major fa-cog"></span></li>
 								<li><span class="icon solid style5 major fa-desktop"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
+								<li><span class="icon solid style6 major fa-calendar"></span></li> -->
+								<li><span class = "image fit"><img src="{% static 'images/3646045.png' %}" width = "200", alt = ""/></span></li>
+								
 							</ul>
 						</div>
 						<div class="col-6 col-12-medium">
 							<header class="major">
-								<h2>Lorem ipsum dolor adipiscing<br />
-								amet dolor consequat</h2>
+								<h2><strong>FACE ON</strong> Implementation</h2>
 							</header>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-							<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+							<p>코로나-19로 마스크 착용이 의무화되며 기존 '얼굴 인식'기술에서 더 발전한 형태인 마스크 유무 모두에 적용 가능한 안면 기술에 대한 수요가 높아졌다.</p>
+							<p><strong>'FACE ON'</strong>의 관리자 안면 인식 로그인 시스템은 마스크 유무 여부와 상관없이 데이터베이스에 등록된 사람들의 얼굴을 인식하여 자동으로 로그인되는 서비스를 제공하고 있다.</p>
+							<p><STRONG>'FACE ON'</STRONG>에는 정확도 높은 실시간 안면 인식 기술 제공을 위해 인공지능, 딥러닝 모델, 실시간 데이터 검출 및 대조 등의 최신 기술을 사용하고 있다.</P>
+							<p>이러한 마스크 유무 여부와 상관없이 얼굴 인식이 가능한 기술은 결제, 금융, 행정, 보안, 출입관리, 의료복지, 엔터, 쇼핑 등의 다양한 영역에서 활용이 가능하다.</p>
+							<p>이 외에도 숙박업소 예악자 및 투색객의 신원확인, 대규모 시험에서의 수험생 확인, 도서대여자 확인 등의 다양한 영역에서 폭넓게 활용될 수 있는 잠재성을 지닌 기술이다.</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-		<!-- Three -->
-			<section id="three" class="main style1 special">
+<!-- FACE ON 프로젝트 이용자 후기 -->
+			<section id="six" class="main style1 special">
 				<div class="container">
 					<header class="major">
-						<h2>Adipiscing amet consequat</h2>
+						<h2>User Review</h2>
 					</header>
-					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
+					<p>Real story from 'FACE ON's genuine users</p>
+
+					<!-- 1번째 유저 리뷰 -->
 					<div class="row gtr-150">
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="{% static 'images/pic02.jpg' %}" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+							<span class="image fit"><img src="{% static 'images/Kang.jpg' %}", width = "20", alt="" /></span>
+							<h3>Kang Ji Yoon</h3>
+							<p>With this 'FACE ON' service, don't need to type on your ID and password. Just with your face, even with mask, you can login automatically.</p>
 							<ul class="actions special">
 								<li><a href="#" class="button">More</a></li>
 							</ul>
 						</div>
+
+						<!-- 2번째 유저 리뷰 -->
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="{% static 'images/pic03.jpg' %}" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+							<span class="image fit"><img src="{% static 'images/Daniel_lee.jpg' %}", width = "20",  alt="" /></span>
+							<h3>Daniel Lee</h3>
+							<p>Using 'FACE ON', don't need to take off your mask for check-in. It provides efficient and safer environments. </p>
 							<ul class="actions special">
 								<li><a href="#" class="button">More</a></li>
 							</ul>
 						</div>
+
+						<!-- 3번째 유저 리뷰 -->
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="{% static 'images/pic04.jpg' %}" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+							<span class="image fit"><img src="{% static 'images/Kwon.jpg' %}", width = "20",  alt="" /></span>
+							<h3>Kwon Jin Yeong</h3>
+							<p>Efficient system for office workers who belongs to administration sections. For few seconds, it captures your face photo and move to administration pages.</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+
+						<!-- 4번째 유저 리뷰 -->
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="{% static 'images/Chae.jpg' %}",, width = "20", alt="" /></span>
+							<h3>Chae Kyeong Min</h3>
+							<p>Using 'FACE ON', it makes it possible to automatically buy items from the stores without cash or credit card.</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+						</div>
+
+						<!-- 5번째 유저 리뷰 -->
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="{% static 'images/Song.jpg' %}",, width = "20", alt="" /></span>
+							<h3>Song Hyun-A</h3>
+							<p>Don't need to remember about your ID & password anymore. Also, it solves the problems in security section.</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+						</div>
+
+						<!-- 6번째 유저 리뷰 -->
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="{% static 'images/Moon.jpg' %}",, width = "20", alt="" /></span>
+							<h3>Hee Jun Moon</h3>
+							<p>With my masks and glasses on, it recognizes my face in few seconds and automatically log-in. Will be great for our company to utilize this technology.</p>
 							<ul class="actions special">
 								<li><a href="#" class="button">More</a></li>
 							</ul>
@@ -114,13 +155,13 @@
 				</div>
 			</section>
 
-		<!-- Four -->
+<!-- Face On membership fee & service -->
 			<section id="four" class="main style2 special">
 				<div class="container">
 					<header class="major">
-						<h2>Ipsum feugiat consequat?</h2>
+						<h2>Want to register on <strong>'FACE ON'</strong> service?</h2>
 					</header>
-					<p>Sed lacus nascetur ac ante amet sapien.</p>
+					<p>Details about membership fee and services.</p>
 					<ul class="actions special">
 						<li><a href="#" class="button wide primary">Sign Up</a></li>
 						<li><a href="#" class="button wide">Learn More</a></li>
@@ -128,7 +169,8 @@
 				</div>
 			</section>
 
-		<!-- Footer -->
+
+<!-- Footer: 문서의 푸터를 설정(서비스명, 이메일명 명시) -->
 			<section id="footer">
 				<ul class="icons">
 					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
@@ -138,7 +180,7 @@
 					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; FACE ON PROJECT</li><li>E-mail: help@faceon.co.kr </li>
 				</ul>
 			</section>
 
