@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/75672831/124614729-8364da80-deaf-11eb-80a8-c5bac28bc62b.JPG" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="가상화면"></img>
 
 ## 2.	프로젝트 소개
-<br/>
+<br/>  
 <br/>
 <img src="https://user-images.githubusercontent.com/75672831/124615900-9c21c000-deb0-11eb-9d23-25e112be380a.JPG" width="50%" height="70%" alt="로그인구현"></img>
 
@@ -42,7 +42,7 @@ Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic<br/>
 Python 3.7<br/>
 CUDA 11.2<br/>
 Opencv 3.2<br/>
-
+<br/>  
 ## 4. 타임라인
 
 ![타임라인](https://user-images.githubusercontent.com/75672831/124616639-38e45d80-deb1-11eb-9d41-9ccebbc2c481.JPG)
