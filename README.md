@@ -102,6 +102,58 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 - 웹캠 연동을 통해 실시간 이미지 수집
 - ajax로 서버에 이미지 전송
 - 모델 연동하여 예측 결과 웹으로 구현
-- 예측할 때마다 모델을 불러오는 것이 아니라 서버 최초 실행 시 apps.py에서 모델을 한 번에 불러올 수 있도록 진행
+- 예측할 때마다 모델을 불러오는 것이 아니라 서버 최초 실행 시 apps.py에서 모델을 한 번에 불러올 수 있도록 진행<br/><br/>
 
+## 7.  웹페이지 구축(인터페이스) : Django, Javascript, HTML5
+
+#### 1) Django 가상 환경 설정
+![241](https://user-images.githubusercontent.com/75672831/124625920-2f5ef380-deb9-11eb-8636-6823f04299f9.JPG)
+
+#### 2) Django 프로그램 설치
+![46223](https://user-images.githubusercontent.com/75672831/124625964-3ab21f00-deb9-11eb-90b1-7a3f89583fad.JPG)
+
+#### 3) 메인화면 구축(템플릿 https://html5up.net/photon)
+
+- index.html: 메인 화면
+
+![메인](https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG)
+
+- login_form: 로그인 화면
+- 
+![로그인](https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG)
+
+#### 4) 웹캠 연동하여 실시간 이미지 수집
+
+- Video, Canvas 활용
+
+#### 5) ajax로 수집된 이미지 서버로 전송
+
+#### 6) 모델연동 및 예측 결과 웹으로 전송
+
+#### 7) 웹에서 안면인식 로그인 서비스 구현
+
+
+## 8. 한계 및 개선사항
+
+1) 간혹 타인이 인식되는 경우가 발생. 이는 데이터셋의 절대적인 양 부족 탓으로 생각되며 추후에 추가 학습으로 보완할 수 있을 것으로 보임.
+2) 동양인의 경우 서양인에 비해 이목구비가 비교적 덜 뚜렷해 인식률이 낮은 부분도 고려할 수 있었음 -> 추후 동양인의 얼굴이 많이 학습된 모델을 사용하면 정확도 보완 가능 예상
+3) 총 세 번의 학습을 진행하였는데, 가장 첫 번째 학습에서는 임의의 기준으로 선정된 연예인 네 명의 800장의 사진을 약 9시간 동안 학습시켰으나 학습 후 테스트 결과 연예인 4명을 모두 맞추지 못해, detection 대상을 연예인에서 조원 4명으로 변경. 연예인 사진으로 진행 시 마스크 합성 및 이미지 수집에 따른 시간 소요가 크게 예상되어 데이터셋 확보의 어려움을 고려해 팀원 4명을 인식하는 것으로 변경.
+
+
+## 9. 구현시 유의사항
+
+- yolov4 model 구글 드라이브 링크: https://drive.google.com/drive/folders/1Um-007VdjAEXjdK2uw6GjuvqiFw7QX7n?usp=sharing
+- Image dataset은 미업로드. 라벨링된 dataset을 경로를 맞춰 디렉토리에 넣고 사용할 수 있음
+
+
+## 10. 참고 문헌
+#### - 템플릿
+https://html5up.net/photon
+
+#### - 모델 관련
+https://bblib.net/entry/convert-voc-to-yolo-xml-to-yolo-xml-to-txt
+https://ukayzm.github.io/python-face-recognition/
+https://blog.naver.com/newton89/221794524792
+https://github.com/theAIGuysCode/tensorflow-yolov4-tflite
+https://jjeamin.github.io/darknet_book/part1_paper/yolov4.html
 
