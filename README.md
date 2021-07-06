@@ -6,3 +6,42 @@
 ## 2.	프로젝트 소개
 
 <img src="https://user-images.githubusercontent.com/75672831/124615900-9c21c000-deb0-11eb-9d23-25e112be380a.JPG" width="50%" height="70%" alt="로그인구현"></img>
+
+1) 실시간 이미지 캡처를 통한 안면 인식(정면 응시 요망)
+2) 사용자 마스크 착용 유무 모두 인식 가능
+3) 관리자의 안면 인식을 통한 자동 로그인 서비스
+4) 관리자 외 관리자 서비스 사용 불가
+
+## 3.	개발환경
+CPU i7-1165G7
+RAM 16GB
+
+-Face_recognition
+cmake 3.2
+dlib 19.22
+face_recognition 1.3
+face_recognition_models 0.3
+Opencv 4.5
+Python 3.8
+Tensorflow 2.5
+
+-Inception-resnet v1
+Google Colab
+Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic
+Inception-resnet v1
+Keras 2.4
+Matplotlib 3.2
+Numpy 1.19
+PILLOW 7.1
+Python 3.7
+
+-Yolov4
+Google Colab
+Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic
+Python 3.7
+CUDA 11.2
+Opencv 3.2
+
+## 4. 타임라인
+
+![타임라인](https://user-images.githubusercontent.com/75672831/124616639-38e45d80-deb1-11eb-9d41-9ccebbc2c481.JPG)
