@@ -104,7 +104,7 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 - 모델 연동하여 예측 결과 웹으로 구현
 - 예측할 때마다 모델을 불러오는 것이 아니라 서버 최초 실행 시 apps.py에서 모델을 한 번에 불러올 수 있도록 진행<br/>
 
-## 8.  웹페이지 구축(인터페이스) : Django, Javascript, HTML5
+  ## 8.  웹페이지 구축(인터페이스) : Django, Javascript, HTML5
 
 #### 1) Django 가상 환경 설정
 ![241](https://user-images.githubusercontent.com/75672831/124625920-2f5ef380-deb9-11eb-8636-6823f04299f9.JPG)
