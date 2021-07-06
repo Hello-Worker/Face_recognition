@@ -75,7 +75,6 @@ Opencv 3.2<br/>
 - labelimg를 이용해 모든 사진의 얼굴에 라벨링 진행(이마 중간부터 턱 끝까지)
 - Label Annotation 파일들을 yolo 형식 txt로 변환
 
-
 #### 2) Custom Data을 이용해 Transfer Learning 진행
 - Google Colab의 GPU 사용
 - Yolov4에서 제공하는 Pretrained Weights에 본 조가 준비한 이미지 데이터로 transfer learning 진행(yolov4.conv.137 : 특징 추출에 특화된 가중치를 넣어 학습)
