@@ -48,6 +48,8 @@ Opencv 3.2<br/>
 
 ## 5. 모델 성능 평가 및 선정 
 
+![KakaoTalk_20210706_235841147](https://user-images.githubusercontent.com/75672831/124629268-3d624380-debc-11eb-80b6-e353cf81a535.png)
+
 모델 선택 기준<br/>
 A. Custom data 학습 가능한가?<br/>
 B. Object detection 가능한가?<br/>
@@ -69,6 +71,8 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 
 
 ## 6. Yolov4 모델 
+
+![46](https://user-images.githubusercontent.com/75672831/124629146-23286580-debc-11eb-937d-199d9fadc4a6.JPG)
 
 ![학습과정](https://user-images.githubusercontent.com/75672831/124618573-dd1ad400-deb2-11eb-99a7-f43a553d7ce1.JPG)
 
