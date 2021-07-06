@@ -116,7 +116,7 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 #### 2) Django 프로그램 설치
 ![46223](https://user-images.githubusercontent.com/75672831/124625964-3ab21f00-deb9-11eb-90b1-7a3f89583fad.JPG)
 
-#### 3) 메인화면 구축(템플릿 참고 https://html5up.net/photon)
+#### 3) 메인화면 구축(참고 템플릿: https://html5up.net/photon)
 
 - index.html: 메인 화면
 - 
