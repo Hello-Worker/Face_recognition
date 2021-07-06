@@ -119,13 +119,15 @@ C. 평가 정확도가 높고, 예측 속도가 빠른 모델인가?<br/>
 #### 3) 메인화면 구축(템플릿 참고 https://html5up.net/photon)
 
 - index.html: 메인 화면
+- 
+<img src="https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG" width="80%" height="50%"></img>
+<img src="https://user-images.githubusercontent.com/75672831/124631083-fffeb580-debd-11eb-915b-99ae06d32244.JPG" width="80%" height="50%"></img>
 
-![메인](https://user-images.githubusercontent.com/75672831/124626684-dcd20700-deb9-11eb-8f33-23908ee2f987.JPG)
-![777](https://user-images.githubusercontent.com/75672831/124631083-fffeb580-debd-11eb-915b-99ae06d32244.JPG)
 
 - login_form: 로그인 화면
 
-![로그인](https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG)
+<img src="https://user-images.githubusercontent.com/75672831/124626700-dfccf780-deb9-11eb-8e1b-f4eb54dc51ca.JPG" width="80%" height="50%"></img>
+
 
 
 ## 8. 웹페이지 모델 연동
