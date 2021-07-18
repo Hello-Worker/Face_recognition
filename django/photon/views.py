@@ -13,7 +13,7 @@ import cv2, base64
 import numpy as np
 import tensorflow as tf
 
-
+ 
 @csrf_exempt
 
 def index(request): # 메인 홈
